@@ -2,8 +2,8 @@
 ### Se usa la guia https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-20-04/
 
 ### update the packages index and install the dependencies necessary to add a new HTTPS repository
-sudo apt update
-sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt update -y
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common  -y
 
 ## Import the repository’s GPG key using the following curl command:
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -12,14 +12,14 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 ### To install the latest version of Docker, run the commands below. If you want to install a specific Docker version, skip this step and go to the next one.
-    sudo apt update
-    sudo apt install docker-ce docker-ce-cli containerd.io
+    sudo apt update -y
+    sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 ### Docker service will start automatically. You can verify it by typing:
 sudo systemctl status docker
 
 ### When a new version of Docker is released, you can update the packages using the standard:
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 ###To execute Docker commands as non-root user you’ll need to add your user to the docker group that is created during the installation of the Docker CE package
 sudo usermod -aG docker $USER
@@ -45,18 +45,18 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 ### Se debe crear un directorio donde ira el archivo .yml
-mkdir my_app
-cd my_app
-nano docker-compose.yml
+#mkdir my_app
+#cd my_app
+#nano docker-compose.yml
 
 ### Start the Compose in a detached mode by passing the -d option
-docker-compose up -d
+#docker-compose up -d
 
 ### To check the running services use the ps option:
-docker-compose ps
+#docker-compose ps
 
 ### When Compose is running in detached mode to stop the services, run:
-docker-compose stop
+#docker-compose stop
 
 ### To stop and remove the application containers and networks, use the down option:
-docker-compose down
+#docker-compose down
