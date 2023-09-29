@@ -26,7 +26,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 ### To verify that Docker has been successfully installed and that you can execute the docker command without prepending sudo
-docker container run hello-world
+#docker container run hello-world
 
 ##############################################
 ###  Instalar Docker-Compose
